@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        function determinarTransporte(distancia) {
+            if (distancia < 0) {
+                return "Distancia no válida";
+            } else if (distancia <= 1000) {
+                return "a pie";
+            } else if (distancia <= 10000) {
+                return "en bicicleta";
+            } else if (distancia <= 30000) {
+                return "en colectivo";
+            } else if (distancia <= 100000) {
+                return "en auto";
+            } else {
+                return "en avión";
+            }
+        }
+        
+        const distancia = parseFloat(prompt("Introducir la distancia en metros: "));
+        const medioTransporte = determinarTransporte(distancia);
+        alert(`El más apropiado medio de transporte para ${distancia} metros de distancia es ${medioTransporte}`);
+    </script>
+</body>
+</html>

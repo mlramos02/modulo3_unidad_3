@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | ejercicio 2</title>
+</head>
+<body>
+    <script>
+        function encontrarMayorNumero(array) {
+            if (array.length === 0) {
+                return "El array está vacío";
+            }
+            return Math.max(...array);
+        }
+        
+        // Función para pedir números al usuario
+        function pedirNumeros() {
+            const numeros = [];
+            let continuar = true;
+            
+            while (continuar) {
+                const input = prompt("Introduce un número (o escribe 'fin' para terminar):");
+                if (input.toLowerCase() === 'fin') {
+                    continuar = false;
+                } else {
+                    const numero = parseFloat(input);
+                    if (!isNaN(numero)) {
+                        numeros.push(numero);
+                    } else {
+                        alert("Por favor, introduce un número válido.");
+                    }
+                }
+            }
+            
+            return numeros;
+        }
+        
+        // Solicitar números al usuario
+        const numeros = pedirNumeros();
+        if (numeros.length > 0) {
+            const mayorNumero = encontrarMayorNumero(numeros);
+            alert(`El mayor número del array es: ${mayorNumero}`);
+        } else {
+            alert("No se ingresaron números.");
+        }
+        
+    </script>
+</body>
+</html>
